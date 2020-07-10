@@ -1,0 +1,12 @@
+<div class="row text-right">
+  <ng-container *ngIf="data$ | async as data">
+    <div class="col-md-10 p-0">
+      <app-track-tag-list *ngIf="data.added" [trackData]="data"></app-track-tag-list>
+    </div>
+    <div class="col-md-1 p-0">
+      <label>
+        <input type="checkbox" [checked]="data.added" (change)="setValid(!data.added)">
+      </label>
+    </div>
+  </ng-container>
+</div>

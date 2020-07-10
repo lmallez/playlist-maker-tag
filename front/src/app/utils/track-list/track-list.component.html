@@ -1,0 +1,18 @@
+<div class="container-fluid album-container">
+  <div *ngFor="let track of sortedTracks()" class="row track-item">
+    <div class="col-md-1">
+      <img [src]="track.spotify.album.images[0].url" style="padding: 10px; max-height: 100px; max-width: 100px;" width="100%">
+    </div>
+    <div class="col-md-7 d-inline align-middle">
+      {{ track.spotify.name }}
+      <ng-container *ngFor="let artist of track.spotify.artists">
+        <app-artist-link [artist]="artist"></app-artist-link>
+      </ng-container>
+      <br>
+      <a class="btn-link" (click)="navigate(track.spotify.album.id)">{{ track.spotify.album.name }}</a> <p class="d-inline" style="padding-left: 3px; font-size: smaller">{{track.spotify.album.release_date}}</p>
+    </div>
+    <div class="col-md-4 align-middle" *ngIf="valid">
+      <app-track-valid [trackData]="track.data"></app-track-valid>
+    </div>
+  </div>
+</div>

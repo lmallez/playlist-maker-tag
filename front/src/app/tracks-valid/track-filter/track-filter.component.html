@@ -1,0 +1,30 @@
+<div class="text-center">
+  <h3>FILTERS</h3>
+  <form class="form">
+    <div class="form-group">
+      <ng-container *ngIf="listTags$ | async as listTags">
+        <ng-multiselect-dropdown
+                [placeholder]="'Track tags'"
+                [settings]="dropdownSettings"
+                [data]="resolveTags(listTags.tags)"
+                [(ngModel)]="tags"
+                [ngModelOptions]="{standalone: true}"
+        ></ng-multiselect-dropdown>
+      </ng-container>
+    </div>
+    <div class="form-group">
+      <ng-container *ngIf="listArtists$ | async as listArtists">
+        <ng-multiselect-dropdown
+                [placeholder]="'Artists'"
+                [settings]="dropdownSettings"
+                [data]="resolveArtists(listArtists.artists)"
+                [(ngModel)]="artists"
+                [ngModelOptions]="{standalone: true}"
+        ></ng-multiselect-dropdown>
+      </ng-container>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success" (click)="navigate()">Apply Filters</button>
+    </div>
+  </form>
+</div>

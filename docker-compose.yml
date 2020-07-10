@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  playlist_maker_tag_back:
+    build: ./back
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./back:/usr/src/app
+    environment:
+      SPOTIPY_CLIENT_ID: "${SPOTIPY_CLIENT_ID}"
+      SPOTIPY_CLIENT_SECRET: "${SPOTIPY_CLIENT_SECRET}"
+  playlist_maker_tag_front:
+    build: ./front
+    volumes:
+      - ./back/nginx.conf:/etc/nginx/default.conf
+    ports:
+      - '80:80'
+

@@ -1,0 +1,17 @@
+<ng-container *ngIf="albumTracks$ | async as albumTracks" class="d-table">
+  <div class="track-item">
+    <div *ngFor="let track of albumTracks.tracks" class="row" [class.active]="selectedTrackId == track.id">
+      <div class="col-md-7 d-inline align-middle">
+        {{ track.spotify.name }}
+        <ng-container *ngFor="let artist of track.spotify.artists">
+          <ng-container *ngIf="!albumArtistsIds.includes(artist.id)">
+            <app-artist-link [artist]="artist"></app-artist-link>
+          </ng-container>
+        </ng-container>
+      </div>
+      <div class="col-md-5">
+        <app-track-valid [trackData]="track.data"></app-track-valid>
+      </div>
+    </div>
+  </div>
+</ng-container>

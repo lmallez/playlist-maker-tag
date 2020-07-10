@@ -1,0 +1,8 @@
+<div class="container filter-container">
+  <app-track-filter [aTags]="paramTags" [aArtists]="paramArtists"></app-track-filter>
+</div>
+
+<ng-container *ngIf="tracks$ | async as tracks">
+  <i class="small text-center">{{ tracks.tracks.length }} tracks found</i>
+  <app-track-list [tracks]="tracks.tracks" [valid]="true"></app-track-list>
+</ng-container>

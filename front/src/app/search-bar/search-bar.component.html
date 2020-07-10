@@ -1,0 +1,54 @@
+<div class="btn-group" ngbDropdown role="group" style="width: 100%">
+  <input ngbDropdownToggle placeholder="Search Track, Album or Artist" type="text" class="text-center" style="width: 100%" #query (input)="search(query.value)" (focus)="focus = true">
+  <div ngbDropdownMenu>
+    <div class="container-fluid" *ngIf="response$ | async as response">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="text-center">Tracks</h2>
+          <div class="search-item">
+            <div class="row" *ngFor="let track of response.tracks.items" (click)="linkTo(['track', track.id])">
+              <div class="col-md-4">
+                <img *ngIf="track.album.images.length > 0" [src]="track.album.images[0].url" style="padding: 10px; max-height: 100px; max-width: 100px;" width="100%" alt="">
+              </div>
+              <div class="col-md-8">
+                {{ track.name }}
+                <i *ngFor="let artist of track.artists" style="font-size: smaller">{{artist.name}}, </i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <h2 class="text-center">Albums</h2>
+          <div class="search-item">
+            <div class="row" *ngFor="let album of response.albums.items" (click)="linkTo(['album', album.id])">
+              <div class="col-md-4">
+                <img *ngIf="album.images.length > 0" [src]="album.images[0].url" style="padding: 10px; max-height: 100px; max-width: 100px;" width="100%">
+              </div>
+              <div class="col-md-8">
+                {{ album.name }}
+                <i *ngFor="let artist of album.artists" style="font-size: smaller">{{artist.name}}, </i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <h2 class="text-center">Artists</h2>
+          <div class="search-item">
+            <div class="row" *ngFor="let artist of response.artists.items" (click)="linkTo(['artist', artist.id])">
+              <div class="col-md-4">
+                <img *ngIf="artist.images.length > 0" [src]="artist.images[0].url" style="padding: 10px; max-height: 100px; max-width: 100px;" width="100%">
+              </div>
+              <div class="col-md-8">
+                {{ artist.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

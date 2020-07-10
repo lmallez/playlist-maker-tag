@@ -1,0 +1,23 @@
+<div class="container-fluid album-container">
+  <div class="row">
+    <div class="col-md-3">
+        <img [src]="album.images[0].url" style="padding: 10px" width="100%">
+    </div>
+    <div class="col-md-9">
+      <div class="row" style="padding-bottom: 10px">
+        <div class="col-md-9">
+          <b style="font-size: x-large">{{ album.name }}</b>
+          <div class="d-inline" *ngFor="let artist of album.artists">
+            <app-artist-link class="d-inline" [artist]="artist"></app-artist-link>
+          </div>
+        </div>
+        <div class="col-md-3" style="text-align: right">
+          <p style="padding: 7px"><i>release date :</i> {{ album.release_date }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <app-album-tracks class="container-fluid" [album]="album" [selectedTrackId]="selectedTrackId"></app-album-tracks>
+      </div>
+    </div>
+  </div>
+</div>

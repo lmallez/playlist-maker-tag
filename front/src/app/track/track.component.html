@@ -1,0 +1,3 @@
+<ng-container *ngIf="track$ | async as track">
+  <app-album-view [album]="track.track.spotify.album" [selectedTrackId]="track.track.id"></app-album-view>
+</ng-container>

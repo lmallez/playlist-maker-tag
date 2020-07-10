@@ -1,0 +1,6 @@
+<div class="container-fluid album-container">
+  <ng-container *ngIf="tag$ | async as tag">
+    <h1>{{ tag.id }}</h1>
+    <app-tag-tracks [tagId]="tag.id"></app-tag-tracks>
+  </ng-container>
+</div>

@@ -1,0 +1,3 @@
+<ng-container *ngIf="album$ | async as album">
+  <app-album-view [album]="album.album"></app-album-view>
+</ng-container>

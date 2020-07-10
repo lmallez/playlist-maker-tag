@@ -1,0 +1,17 @@
+<div class="container-fluid artist-container">
+  <div class="row">
+    <div class="col-md-3">
+      <img [src]="artist.images[0].url" style="padding: 10px" width="100%" alt="{{ artist.name }}">
+    </div>
+    <div class="col-md-9">
+      <div class="row" style="padding-bottom: 10px">
+        <div class="col-md-9">
+          <b style="font-size: x-large">{{ artist.name }}</b>
+        </div>
+      </div>
+      <div class="row">
+        <app-artist-tracks-top class="container-fluid" [artistId]="artist.id"></app-artist-tracks-top>
+      </div>
+    </div>
+  </div>
+</div>

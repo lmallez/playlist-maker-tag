@@ -1,0 +1,12 @@
+.active {
+  background-color: lightblue;
+  border-color: #007bff;
+}
+
+.track-item :hover {
+  background-color: lightgrey;
+}
+
+.track-item .active :hover {
+  background-color: inherit;
+}

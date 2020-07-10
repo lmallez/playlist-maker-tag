@@ -1,0 +1,3 @@
+<ng-container *ngIf="artist$ | async as artist">
+  <app-artist-view [artist]="artist.artist"></app-artist-view>
+</ng-container>
