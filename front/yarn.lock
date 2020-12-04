@@ -5745,10 +5745,10 @@ next-tick@~1.0.0:
   resolved "https://registry.npmjs.org/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-ng-multiselect-dropdown@^0.2.10:
-  version "0.2.10"
-  resolved "https://registry.npmjs.org/ng-multiselect-dropdown/-/ng-multiselect-dropdown-0.2.10.tgz#464dfe34c09d23b1ba8eb851663d05f4614fd1aa"
-  integrity sha512-X7JlVgWMUmkabWxGNxlNmPmBi/dPAPTSc5lkBmeZbWBehL+yrfrHVAs2F27w5genI7u64CIR1AHMINy51/ueUg==
+ng-multiselect-dropdown@^0.2.12:
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/ng-multiselect-dropdown/-/ng-multiselect-dropdown-0.2.12.tgz#c263e4a775febac6666955c46acef25541053278"
+  integrity sha512-Dhw2obhbr4gMlXlCuVrq23BsHAWuYVo8DdpkKZADrctG1iaMSD5IMeTj8utAOjq6JKs0P6IUQqJrTqkf6c4V6A==
   dependencies:
     tslib "^1.9.0"
 
